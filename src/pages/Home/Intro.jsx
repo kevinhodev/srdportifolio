@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { Transition, TransitionGroup } from "react-transition-group";
 import classNames from "classnames";
 import { useTheme, useInterval, usePrevious } from "../../hooks";
@@ -29,7 +29,6 @@ const Intro = ({ id, sectionRef, habilities, ...rest }) => {
     () => {
       const index = (habilityIndex + 1) % habilities.length;
       setHabilityIndex(index);
-      return index;
     },
     5000,
     theme.themeType
