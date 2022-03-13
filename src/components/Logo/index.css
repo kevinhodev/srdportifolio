@@ -1,0 +1,37 @@
+.logo {
+  fill: var(--colorTextTitle);
+  transition: fill var(--durationL) ease;
+}
+
+.logo__highlight {
+  fill: rgb(var(--rgbAccent));
+  opacity: 0;
+  transform: scale3d(1, 0, 1);
+  transform-origin: top;
+  transition: opacity 0.1s ease var(--durationM);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo__highlight {
+    transition: transform var(--durationM) var(--bezierFastoutSlowin),
+      opacity 0.1s ease var(--durationM);
+  }
+}
+
+a:focus .logo__highlight,
+a:hover .logo__highlight,
+logo:hover .logo__highlight {
+  opacity: 1;
+  transform: scale3d(1, 1, 1);
+  transform-origin: bottom;
+  transition: opacity 0.1s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:focus .logo__highlight,
+  a:hover .logo__highlight,
+  logo:hover .logo__highlight {
+    transition: transform var(--durationM) var(--bezierFastoutSlowin),
+      opacity 0.1s ease;
+  }
+}

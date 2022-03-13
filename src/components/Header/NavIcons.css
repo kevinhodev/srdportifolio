@@ -1,0 +1,57 @@
+.navbar__nav-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 16;
+}
+
+@media (max-width: 696px), (max-height: 696px) {
+  .navbar__nav-icons {
+    flex-direction: row;
+    position: absolute;
+    bottom: var(--spaceXL);
+    left: var(--spaceXL);
+  }
+}
+
+@media (max-width: 820px) and (max-height: 420px) {
+  .navbar__nav-icons {
+    left: var(--spaceL);
+    transform: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.navbar__nav-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spaceS);
+  width: var(--space2XL);
+  height: var(--space2XL);
+  color: var(--colorTextLight);
+  transition: color var(--durationM) var(--bezierFastoutSlowin);
+}
+
+.navbar__nav-icon-link:focus {
+  box-shadow: 0 0 4px rgb(var(--rgbBackground)), 0 0 5px rgb(var(--rgbText));
+}
+
+.navbar__nav-icon-link:active {
+  box-shadow: none;
+}
+
+.navbar__nav-icon-link:hover,
+.navbar__nav-icon-link:focus,
+.navbar__nav-icon-link:active {
+  color: rgb(var(--rgbAccent));
+}
+
+.navbar__nav-icon {
+  fill: currentColor;
+  transition: fill var(--durationM) ease;
+}
