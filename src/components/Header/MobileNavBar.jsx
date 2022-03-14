@@ -23,6 +23,7 @@ const MobileNavBar = ({ handleMobileNavClick, hashKey, isMatch, ...rest }) => {
       />
       <Transition
         mountOnEnter
+        unmountOnExit
         in={menuOpen}
         timeout={{ enter: 0, exit: msToNum(styles.base.durationL) }}
         onEnter={reflow}

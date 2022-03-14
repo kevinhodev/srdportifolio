@@ -13,7 +13,7 @@ import "./Intro.css";
 
 const Intro = ({ id, sectionRef, habilities, ...rest }) => {
   const theme = useTheme();
-  const previousTheme = usePrevious(theme);
+  /*const previousTheme = usePrevious(theme);*/
   const [habilityIndex, setHabilityIndex] = useState(0);
 
   const introLabel = [
@@ -35,10 +35,8 @@ const Intro = ({ id, sectionRef, habilities, ...rest }) => {
   );
 
   useEffect(() => {
-    if (previousTheme && previousTheme !== theme.themeType) {
-      setHabilityIndex(0);
-    }
-  }, [theme.themeType, previousTheme]);
+    setHabilityIndex(0);
+  }, [theme.themeType]);
 
   const titleId = `${id}-title`;
 

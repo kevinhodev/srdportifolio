@@ -40,7 +40,7 @@ const Header = ({ location }) => {
         onClick={handleMobileNavClick}
         onBlur={blurOnMouseUp}
       >
-        <Logo highlight></Logo>
+        <Logo highlight />
       </Link>
       {isMobile ? (
         <MobileNavbar
