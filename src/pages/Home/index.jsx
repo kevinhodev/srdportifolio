@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Intro from "./Intro";
 import "./index.css";
@@ -6,7 +6,24 @@ import "./index.css";
 const habilities = ["Front-end", "Back-end", "Designer", "Modelador"];
 
 const Home = () => {
+  const [scrollIndicatorHidden, setScrollIndicatorHidden] = useState(false);
   const intro = useRef();
+
+  useEffect(() => {
+    const indicatorObserver = new IntersectionObserver(
+      ([entry]) => {
+        setScrollIndicatorHidden(!entry.isIntersecting);
+        console.log(entry);
+      },
+      {
+        rootMargin: "-100% 0px 0px 0px",
+      }
+    );
+
+    indicatorObserver.observe(intro.current);
+
+    return () => indicatorObserver.disconnect();
+  });
 
   return (
     <div className="home">
@@ -17,7 +34,12 @@ const Home = () => {
           content="Portifólio de Kevin Ramos - um desenvolvedor fullstack"
         ></meta>
       </Helmet>
-      <Intro id="intro" sectionRef={intro} habilities={habilities} />
+      <Intro
+        id="intro"
+        sectionRef={intro}
+        habilities={habilities}
+        scrollIndicatorHidden={scrollIndicatorHidden}
+      />
     </div>
   );
 };

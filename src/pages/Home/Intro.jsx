@@ -1,19 +1,27 @@
 import { Suspense, useEffect, useState, useRef } from "react";
 import { Transition, TransitionGroup } from "react-transition-group";
 import classNames from "classnames";
-import { useTheme, useInterval, usePrevious } from "../../hooks";
+import { useTheme, useInterval, useWindowSize } from "../../hooks";
 import prerender from "../../utils/prerender";
 import { reflow } from "../../utils/transiton";
+import { medias } from "../../utils/style";
 import { styles } from "../../components/ThemeProvider/theme";
 import Section from "../../components/Section";
 import DecoderText from "../../components/DecoderText";
 import Heading from "../../components/Heading";
 import VisuallyHidden from "../../components/VisuallyHidden";
+import { ReactComponent as ArrowDown } from "../../assets/icons/arrow-down.svg";
 import "./Intro.css";
 
-const Intro = ({ id, sectionRef, habilities, ...rest }) => {
+const Intro = ({
+  id,
+  sectionRef,
+  habilities,
+  scrollIndicatorHidden,
+  ...rest
+}) => {
   const theme = useTheme();
-  /*const previousTheme = usePrevious(theme);*/
+  const windowSize = useWindowSize();
   const [habilityIndex, setHabilityIndex] = useState(0);
 
   const introLabel = [
@@ -130,6 +138,29 @@ const Intro = ({ id, sectionRef, habilities, ...rest }) => {
                 </TransitionGroup>
               </Heading>
             </header>
+            {windowSize.width > medias.tablet && (
+              <div
+                className={classNames(
+                  "intro__scroll-indicator",
+                  `intro__scroll-indicator--${status}`,
+                  { "intro__scroll-indicator--hidden": scrollIndicatorHidden }
+                )}
+              ></div>
+            )}
+            {windowSize.width <= medias.tablet && (
+              <div
+                className={classNames(
+                  "intro__mobile-scroll-indicator",
+                  `intro__mobile-scroll-indicator--${status}`,
+                  {
+                    "intro__mobile-scroll-indicator--hidden":
+                      scrollIndicatorHidden,
+                  }
+                )}
+              >
+                <ArrowDown aria-hidden />
+              </div>
+            )}
           </>
         )}
       </Transition>
