@@ -23,6 +23,7 @@ const baseStyles = {
   fontSizeH2: pxToRem(58),
   fontSizeH3: pxToRem(38),
   fontSizeH4: pxToRem(28),
+  maxWidthL: "1096px",
   spaceOuter: "64px",
   spaceS: "8px",
   spaceM: "16px",
