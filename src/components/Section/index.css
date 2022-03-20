@@ -10,7 +10,7 @@
   }
 }
 
-@media (max-width: 1680px) {
+@media (max-width: 1024px) {
   .section {
     padding-left: calc(var(--space4XL) + var(--space3XL));
   }

@@ -91,3 +91,25 @@
   align-items: center;
   justify-content: center;
 }
+
+.button__icon {
+  transition-property: opacity, fill;
+  transition-duration: var(--durationS);
+  transition-timing-function: var(--bezierFastoutSlowin);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button__icon {
+    transition-property: transform, opacity, fill;
+  }
+}
+
+.button__icon--end {
+  margin-left: var(--spaceS);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button:hover .button__icon--shift {
+    transform: translate3d(var(--spaceXS), 0, 0);
+  }
+}

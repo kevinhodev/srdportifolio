@@ -4,6 +4,7 @@ import { ReactComponent as Github } from "../../assets/icons/github.svg";
 import { ReactComponent as Linkedin } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as Menu } from "../../assets/icons/menu.svg";
 import { ReactComponent as Close } from "../../assets/icons/close.svg";
+import { ReactComponent as ArrowRigth } from "../../assets/icons/arrow-right.svg";
 import "./index.css";
 
 const icons = {
@@ -12,6 +13,7 @@ const icons = {
   linkedin: Linkedin,
   menu: Menu,
   close: Close,
+  arrowRight: ArrowRigth,
 };
 
 const Icon = ({ icon, className, ...rest }) => {

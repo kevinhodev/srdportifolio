@@ -71,8 +71,8 @@ const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Desenhado o futura da educação"
-        description="Projetando uma plataforma para ajudar os educadores a criar um melhor material didático on-line"
+        title="Desenhando o futuro da educação"
+        description="Uma plataforma para ajudar os educadores a criar um melhor material didático on-line"
         buttonText="Ver Projeto"
         buttonLink="/projetos/edmais"
       />
