@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Intro from "./Intro";
 import ProjectSummary from "./ProjectSummary";
+import Profile from "./Profile";
 import "./index.css";
 
 const habilities = ["Front-end", "Back-end", "Designer", "Modelador"];
@@ -12,9 +13,17 @@ const Home = () => {
   const intro = useRef();
   const projectOne = useRef();
   const projectTwo = useRef();
+  const projectTree = useRef();
+  const details = useRef();
 
   useEffect(() => {
-    const revealSections = [intro, projectOne, projectTwo];
+    const revealSections = [
+      intro,
+      projectOne,
+      projectTwo,
+      projectTree,
+      details,
+    ];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -86,6 +95,21 @@ const Home = () => {
         description="Design e desenvolvimento de um aplicativo de rastreamento de videogame construído em React Native"
         buttonText="Ver Projeto"
         buttonLink="https://gamestackapp.com"
+      />
+      <ProjectSummary
+        id="project-3"
+        sectionRef={projectTree}
+        visible={visibleSections.includes(projectTree.current)}
+        index={3}
+        title="Colaboração de imagens biomédicas"
+        description="Aumentando a quantidade de colaboração no Slice, um aplicativo para imagens biomédicas"
+        buttonText="Ver Projeto"
+        buttonLink="/projetos/biomagem"
+      />
+      <Profile
+        sectionRef={details}
+        visible={visibleSections.includes(details.current)}
+        id="details"
       />
     </div>
   );
