@@ -6,6 +6,7 @@ import useInterval from "./useInterval";
 import usePrevious from "./usePrevious";
 import usePrefersReducedMotion from "./usePrefersReducedMotion";
 import useInViewport from "./useInViewport";
+import useRouteTransition from "./useRouteTransition";
 import { useTheme } from "./useTheme";
 
 export {
@@ -18,4 +19,5 @@ export {
   usePrevious,
   usePrefersReducedMotion,
   useInViewport,
+  useRouteTransition,
 };
