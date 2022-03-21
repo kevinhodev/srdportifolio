@@ -5,6 +5,7 @@ import useWindowSize from "./useWindowSize";
 import useInterval from "./useInterval";
 import usePrevious from "./usePrevious";
 import usePrefersReducedMotion from "./usePrefersReducedMotion";
+import useInViewport from "./useInViewport";
 import { useTheme } from "./useTheme";
 
 export {
@@ -15,5 +16,6 @@ export {
   useTheme,
   useInterval,
   usePrevious,
-  usePrefersReducedMotion
+  usePrefersReducedMotion,
+  useInViewport,
 };

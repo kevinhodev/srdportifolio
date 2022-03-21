@@ -106,3 +106,65 @@
 .profile__button--entered {
   opacity: 1;
 }
+
+.profile__tag {
+  margin-top: 220px;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: var(--space4XL) 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .profile__tag {
+    margin-top: 30px;
+  }
+}
+
+.profile__tag-text {
+  font-size: var(--fontSizeBodyS);
+  font-weight: var(--fontWeightMedium);
+  color: rgb(var(--rgbPrimary));
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-duration: var(--durationM);
+  transition-delay: 1.3s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .profile__tag-text {
+    transition-property: opacity, transform;
+    transform: translate3d(calc(var(--spaceM) * -1), 0, 0);
+  }
+}
+
+.profile__tag-text--entered {
+  transform: none;
+  opacity: 1;
+}
+
+.profile__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.profile__svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(50%, -20%, 0);
+  height: 100%;
+  z-index: 32;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: var(--durationM);
+  transition-timing-function: ease;
+  transition-delay: var(--durationL);
+  fill: var(--colorTextTitle);
+}
+
+.profile__svg--entered {
+  opacity: 1;
+}

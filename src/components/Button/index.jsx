@@ -7,6 +7,8 @@ import "./index.css";
 const Button = ({
   className,
   as,
+  secondary,
+  icon,
   iconEnd,
   iconHoverShift,
   iconOnly,
@@ -24,12 +26,22 @@ const Button = ({
     <Component
       className={classNames("button", className, {
         "button--icon-only": iconOnly,
+        "button--secondary": secondary,
       })}
       href={href && isExternalLink ? href : undefined}
       to={href && !isExternalLink ? href : undefined}
       onMouseUp={blurOnMouseUp}
       {...rest}
     >
+      {!!icon && (
+        <Icon
+          className={classNames("button__icon", {
+            "button__icon--start": !iconEnd,
+            "button__icon--hover": iconHoverShift,
+          })}
+          icon={icon}
+        ></Icon>
+      )}
       {!!children && <span className="button__text">{children}</span>}
       {!!iconEnd && (
         <Icon
