@@ -5,6 +5,7 @@ import { usePrefersReducedMotion, useRouteTransition } from "../../hooks";
 import Intro from "./Intro";
 import ProjectSummary from "./ProjectSummary";
 import Profile from "./Profile";
+import Footer from "../../components/Footer";
 import "./index.css";
 
 const habilities = ["Front-end", "Back-end", "Designer", "Modelador"];
@@ -178,6 +179,7 @@ const Home = () => {
         visible={visibleSections.includes(details.current)}
         id="details"
       />
+      <Footer />
     </div>
   );
 };

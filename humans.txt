@@ -1,0 +1,33 @@
+__ __ __
+\ \ \ \ \/
+  \\/\\
+   \/ \/
+
+O arquivo humans.txt explica a equipe, tecnologia,
+e recursos gráficos por trás deste site.
+
+_____________________________________________________________________________________
+
+DESIGNER | デザイナー
+
+Kevin Ramos
+Design artesanal e desenvolvimento web
+
+Ferramentas de projeto:
+Figma
+Photoshop
+
+_____________________________________________________________________________________
+
+TECNOLOGIA | テクノロジー
+
+React
+Three js
+Popmotion
+
+_____________________________________________________________________________________
+
+FONTES | フォント
+
+Gotham
+Hiragino Kaku Gothic

@@ -31,6 +31,7 @@ const baseStyles = {
   lineHeightBody: "1.5",
   maxWidthL: "1096px",
   spaceOuter: "64px",
+  spaceXS: "4px",
   spaceS: "8px",
   spaceM: "16px",
   spaceL: "24px",
